@@ -11,6 +11,8 @@
 
                 <div class="panel-body">
                     {{ trans('app.you_are_logged_in') }}
+                    <br/>
+                    {{ Carbon\Carbon::now() }}
                 </div>
             </div>
         </div>
