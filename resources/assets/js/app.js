@@ -18,3 +18,19 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+/**
+ * Your code here.
+ */
+$(document).ready(function() {
+
+    /**
+     * Displays confirmation window send forms to remove the element.
+     */
+    $("form.form-delete").submit(function(event) {
+        var msg = $(this).find(":submit").attr('data-confirm');
+        if (msg && !confirm(msg))
+            event.preventDefault();
+    });
+
+});

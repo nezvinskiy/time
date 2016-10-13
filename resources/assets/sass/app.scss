@@ -7,3 +7,17 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.panel {
+    .panel-body {
+        .btn-control {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.table {
+    .form-delete {
+        display: inline;
+    }
+}
