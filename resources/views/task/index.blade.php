@@ -5,7 +5,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
+
+            {!! Breadcrumbs::render('task', 'manage') !!}
+
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('app.tasks') }}</div>
                 <div class="panel-body">
@@ -19,10 +22,10 @@
                     <table class="table table-striped table-bordered table-hover table-condensed">
                         <thead>
                             <tr>
-                                <th>{{ trans('app.id') }}</th>
-                                <th>{{ trans('app.name') }}</th>
-                                <th>{{ trans('app.description') }}</th>
-                                <th>{{ trans('app.actions') }}</th>
+                                <th class="col-md-1">{{ trans('app.id') }}</th>
+                                <th class="col-md-4">{{ trans('app.name') }}</th>
+                                <th class="col-md-4">{{ trans('app.description') }}</th>
+                                <th class="col-md-3">{{ trans('app.actions') }}</th>
                             </tr>
                         </thead>
                         <tbody>

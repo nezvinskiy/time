@@ -5,9 +5,12 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
+
+            {!! Breadcrumbs::render('task', 'show') !!}
+
             <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('app.show') }}</div>
+                <div class="panel-heading">{{ trans('app.id') }} {{ $task->id }}</div>
                 <div class="panel-body">
 
                     @include('components.alert')
@@ -18,14 +21,6 @@
 
                     <table class="table table-striped table-bordered table-hover table-condensed">
                         <tbody>
-                            <tr>
-                                <td>
-                                    <strong>{{ trans('app.id') }}</strong>
-                                </td>
-                                <td>
-                                    {{ $task->id }}
-                                </td>
-                            </tr>
                             <tr>
                                 <td>
                                     <strong>{{ trans('app.name') }}</strong>
