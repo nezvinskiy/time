@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-@section('title', trans('app.edit'))
+@section('title', Helpers::title([
+    trans('app.tasks'),
+    trans('app.edit')
+]))
 
 @section('content')
 <div class="container">
