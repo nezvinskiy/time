@@ -25,10 +25,24 @@
                     <table class="table table-striped table-bordered table-hover table-condensed">
                         <thead>
                             <tr>
-                                <th class="col-md-1">{{ trans('app.id') }}</th>
-                                <th class="col-md-4">{{ trans('app.name') }}</th>
-                                <th class="col-md-4">{{ trans('app.description') }}</th>
-                                <th class="col-md-3">{{ trans('app.actions') }}</th>
+                                <th class="col-md-1">
+                                    <a class="{{ Helpers::sortClass('id') }}" href="{!! Helpers::sortRoute(Route::currentRouteName(), 'id') !!}">
+                                        {{ trans('app.id') }}
+                                    </a>
+                                </th>
+                                <th class="col-md-4">
+                                    <a class="{{ Helpers::sortClass('name') }}" href="{!! Helpers::sortRoute(Route::currentRouteName(), 'name') !!}">
+                                        {{ trans('app.name') }}
+                                    </a>
+                                </th>
+                                <th class="col-md-4">
+                                    <a class="{{ Helpers::sortClass('description') }}" href="{!! Helpers::sortRoute(Route::currentRouteName(), 'description') !!}">
+                                        {{ trans('app.description') }}
+                                    </a>
+                                </th>
+                                <th class="col-md-3">
+                                    {{ trans('app.actions') }}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,7 +83,7 @@
                         </tbody>
                     </table>
 
-                    {{ $tasks->links() }}
+                    {{ $tasks->appends(Helpers::getInputAll())->links() }}
 
                 </div>
             </div>

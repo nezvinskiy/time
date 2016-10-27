@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Models\Task;
 
 class TaskController extends Controller
@@ -14,11 +13,11 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Task $tasks)
     {
-        $tasks = Task::orderBy('id', 'DESC')->paginate(env('PAGE_SIZE', 5));
-
-        return view('task.index', compact('tasks'));
+        return view('task.index', [
+            'tasks' => $tasks->sort()
+        ]);
     }
 
     /**
