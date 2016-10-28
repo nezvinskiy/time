@@ -16,17 +16,7 @@
                 <div class="panel-heading">{{ trans('app.id') }} {{ $task->id }}</div>
                 <div class="panel-body">
 
-                    {!! Form::open(['route' => ['task.update', $task->id], 'method' => 'put', 'class' => 'form-horizontal']) !!}
-
-                        {{ Form::bsErrors($errors) }}
-
-                        {{ Form::bsText('name', $task->name) }}
-
-                        {{ Form::bsText('description', $task->description) }}
-
-                        {{ Form::bsSubmit('update') }}
-
-                    {!! Form::close() !!}
+                    @include('task._form', ['form' => ['route' => ['task.update', $task->id], 'method' => 'put']])
 
                 </div>
             </div>

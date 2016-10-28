@@ -14,16 +14,15 @@ class App
 
     public static function sortRoute($route, $column)
     {
-        return route($route, [
-            'sort' => $column,
-            'direction' => (Input::get('direction') == 'asc') ? 'desc' : 'asc'
-        ]);
+        return route($route, array_merge(self::getInputAll(), [
+            'sort' => (strpos(Input::get('sort'), '-') === 0) ? $column : '-' . $column,
+        ]));
     }
 
     public static function sortClass($column)
     {
-        if (Input::get('sort') == $column) {
-            return (Input::get('direction') == 'asc') ? 'asc' : 'desc';
+        if (trim(Input::get('sort'), '-') == $column) {
+            return (strpos(Input::get('sort'), '-') === 0) ? 'desc' : 'asc';
         }
 
         return null;

@@ -20,6 +20,11 @@
 
                     <div class="btn-control">
                         {{ link_to_route('task.create', trans('app.create'), [], ['class' => 'btn btn-primary']) }}
+                        <a id="js-btn-search" href="#" class="btn btn-default">{{ trans('app.advanced_search') }}</a>
+                    </div>
+
+                    <div id="js-form-search" class="well well-sm" style="display: none; padding-top: 25px;">
+                        @include('task._search')
                     </div>
 
                     <table class="table table-striped table-bordered table-hover table-condensed">
@@ -91,3 +96,14 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        $("#js-btn-search").click(function(event) {
+            $('#js-form-search').toggle();
+            event.preventDefault();
+        });
+    });
+</script>
+@endpush

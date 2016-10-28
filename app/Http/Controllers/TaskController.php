@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\TaskFilters;
 
 class TaskController extends Controller
 {
@@ -13,10 +14,10 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Task $tasks)
+    public function index(TaskFilters $filters)
     {
         return view('task.index', [
-            'tasks' => $tasks->sort()
+            'tasks' => Task::filter($filters)->paginate(env('PAGE_SIZE', 5))
         ]);
     }
 

@@ -16,17 +16,7 @@
                 <div class="panel-heading">{{ trans('app.create') }}</div>
                 <div class="panel-body">
 
-                    {!! Form::open(['route' => 'task.store', 'class' => 'form-horizontal']) !!}
-
-                        {{ Form::bsErrors($errors) }}
-
-                        {{ Form::bsText('name') }}
-
-                        {{ Form::bsText('description') }}
-
-                        {{ Form::bsSubmit('create') }}
-
-                    {!! Form::close() !!}
+                    @include('task._form', ['form' => ['route' => ['task.store']]])
 
                 </div>
             </div>
