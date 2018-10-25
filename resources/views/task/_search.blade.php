@@ -6,6 +6,8 @@
 
     {{ Form::bsText('description', app('request')->input('description')) }}
 
+    {{ Form::bsText('time_tracking', app('request')->input('time_tracking')) }}
+
     {{ Form::bsSubmit('search') }}
 
 {!! Form::close() !!}

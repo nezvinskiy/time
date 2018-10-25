@@ -42,4 +42,5 @@ return [
     'manage' => 'Управління',
     'search' => 'Пошук',
     'advanced_search' => 'Розширений пошук',
+    'time_tracking' => 'Облік часу',
 ];

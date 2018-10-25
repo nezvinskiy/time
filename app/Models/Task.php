@@ -10,7 +10,7 @@ class Task extends Model
     use Filterable;
 
     protected $fillable = [
-        'name', 'description',
+        'name', 'description', 'time_tracking',
     ];
 
 }

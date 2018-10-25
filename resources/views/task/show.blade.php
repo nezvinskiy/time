@@ -40,6 +40,14 @@
                                     {{ $task->description }}
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <strong>{{ trans('app.time_tracking') }}</strong>
+                                </td>
+                                <td>
+                                    {{ $task->time_tracking }}
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
 

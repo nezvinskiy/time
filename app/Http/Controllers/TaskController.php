@@ -40,8 +40,9 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required'
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'time_tracking' => 'required|integer',
         ]);
 
         Task::create($request->all());
@@ -85,8 +86,9 @@ class TaskController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required'
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'time_tracking' => 'required|integer',
         ]);
 
         Task::findOrFail($id)->update($request->all());

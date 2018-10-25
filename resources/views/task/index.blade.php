@@ -45,6 +45,11 @@
                                         {{ trans('app.description') }}
                                     </a>
                                 </th>
+                                <th class="col-md-4">
+                                    <a class="{{ Helpers::sortClass('time_tracking') }}" href="{!! Helpers::sortRoute(Route::currentRouteName(), 'time_tracking') !!}">
+                                        {{ trans('app.time_tracking') }}
+                                    </a>
+                                </th>
                                 <th class="col-md-3">
                                     {{ trans('app.actions') }}
                                 </th>
@@ -65,6 +70,9 @@
                                     {{ $task->description }}
                                 </td>
                                 <td>
+                                    {{ $task->time_tracking }}
+                                </td>
+                                <td>
                                     <a class="btn btn-success btn-xs" href="{{ route('task.show', $task->id) }}">
                                         {{ trans('app.show') }}
                                     </a>
@@ -79,7 +87,7 @@
                             @endforeach
                             @else
                             <tr>
-                                <td colspan="4">
+                                <td colspan="5">
                                     {{ trans('app.no_records') }}
                                 </td>
                             </tr>

@@ -40,4 +40,15 @@ class TaskFilters extends QueryFilters
         return $this->builder->where('description', 'LIKE', "%{$value}%");
     }
 
+    /**
+     * Filter by time_tracking.
+     *
+     * @param  string $value
+     * @return Builder
+     */
+    public function time_tracking($value)
+    {
+        return $this->builder->where('time_tracking', $value);
+    }
+
 }
